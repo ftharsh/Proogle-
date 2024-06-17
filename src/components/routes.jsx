@@ -1,9 +1,17 @@
 import React from "react";
+import { Route, Navigate, Routes } from "react-router-dom";
+import { Results } from "./Results";
 
-export function Routes() {
+export const AppRoutes = () => {
   return (
-    <div>
-      <h1>routes</h1>
+    <div className="p-4">
+      <Routes>
+        <Route path="/" element={<Navigate to="/search" />} />
+        <Route path="/search" element={<Results />} />
+        <Route path="/images" element={<Results />} />
+        <Route path="/news" element={<Results />} />
+        <Route path="/videos" element={<Results />} />
+      </Routes>
     </div>
   );
-}
+};
